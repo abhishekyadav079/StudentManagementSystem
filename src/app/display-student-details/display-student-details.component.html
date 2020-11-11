@@ -1,0 +1,33 @@
+<div class="jumbtron">
+  <h1>Student List</h1>
+</div>
+<table class="table">
+
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Student Name</th>
+        <th scope="col">Standard</th>
+        <th scope="col">Age</th>
+        <th scope="col">Address</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let stu of collection ">
+            <td>{{stu.id}}</td>
+            <td>{{stu.name}}</td>
+            <td>{{stu.standard}}</td>
+            <td>{{stu.age}}</td>
+            <td>{{stu.address}}</td>
+            <a routerLink="/update/{{stu.id}}">
+              <i class="fa fa-edit" style="font-size:30px;color:red"></i></a>&nbsp; &nbsp;
+             <!--<i (onclick)="deleteDetails(stu.id)" class="fa fa-trash-o" style="font-size:30px;color:red"></i>-->
+             <button (click)="del(stu.id)">Delete</button>
+            
+
+
+        </tr>
+
+    </tbody>
+  </table>
